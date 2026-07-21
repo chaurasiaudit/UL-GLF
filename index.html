@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Just For You ❤️</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+height:100vh;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(-45deg,#ff4b6e,#ff6b9a,#ff89b5,#ffc1d6);
+background-size:400% 400%;
+animation:bg 12s ease infinite;
+color:white;
+}
+
+@keyframes bg{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.card{
+width:90%;
+max-width:700px;
+padding:40px;
+border-radius:25px;
+background:rgba(255,255,255,.12);
+backdrop-filter:blur(15px);
+text-align:center;
+box-shadow:0 10px 40px rgba(0,0,0,.2);
+z-index:10;
+}
+
+h1{
+font-size:3em;
+margin-bottom:20px;
+}
+
+.typing{
+font-size:1.3em;
+min-height:80px;
+line-height:1.8;
+}
+
+button{
+margin-top:35px;
+padding:15px 35px;
+border:none;
+border-radius:40px;
+background:white;
+color:#ff2d6f;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.08);
+}
+
+#letter{
+display:none;
+margin-top:35px;
+font-size:1.2em;
+line-height:1.8;
+animation:fade 1s;
+}
+
+@keyframes fade{
+from{opacity:0;transform:translateY(20px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+.heart{
+position:absolute;
+bottom:-30px;
+font-size:25px;
+animation:float linear forwards;
+opacity:.8;
+}
+
+@keyframes float{
+
+0%{
+transform:translateY(0) scale(.8);
+opacity:1;
+}
+
+100%{
+transform:translateY(-110vh) scale(1.5) rotate(360deg);
+opacity:0;
+}
+
+}
+
+.footer{
+margin-top:30px;
+font-size:15px;
+opacity:.85;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>❤️ To My Love ❤️</h1>
+
+<div class="typing"></div>
+
+<button onclick="openLetter()">
+Open My Heart 💌
+</button>
+
+<div id="letter">
+
+<p>
+My love,
+</p>
+
+<br>
+
+<p>
+There are thousands of beautiful things in this world,
+but none of them compare to the happiness I feel
+when I think about you.
+</p>
+
+<br>
+
+<p>
+You make ordinary days feel magical.
+You make my worries lighter,
+my laughter louder,
+and my heart fuller.
+</p>
+
+<br>
+
+<p>
+No matter where life takes us,
+I promise to appreciate you,
+respect you,
+support you,
+and love you with all my heart.
+</p>
+
+<br>
+
+<h2>❤️ I Love You ❤️</h2>
+
+</div>
+
+<div class="footer">
+Made with ❤️ just for you.
+</div>
+
+</div>
+
+<script>
+
+const message =
+"Every heartbeat reminds me of you. Every smile carries your name. Thank you for making my life brighter just by being in it.";
+
+let i=0;
+
+function type(){
+
+if(i<message.length){
+
+document.querySelector(".typing").innerHTML+=message.charAt(i);
+
+i++;
+
+setTimeout(type,40);
+
+}
+
+}
+
+type();
+
+function openLetter(){
+
+document.getElementById("letter").style.display="block";
+
+for(let i=0;i<120;i++){
+
+setTimeout(createHeart,i*40);
+
+}
+
+}
+
+function createHeart(){
+
+const heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML=["❤️","💕","💖","💗","💘"][Math.floor(Math.random()*5)];
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.fontSize=(15+Math.random()*30)+"px";
+
+heart.style.animationDuration=(4+Math.random()*4)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+
+heart.remove();
+
+},9000);
+
+}
+
+setInterval(createHeart,700);
+
+</script>
+
+</body>
+</html>
