@@ -15,16 +15,17 @@ font-family:'Segoe UI',sans-serif;
 }
 
 body{
-height:100vh;
-overflow-y:auto;
-overflow-x:hidden;
-display:flex;
-justify-content:center;
-align-items:center;
-background:linear-gradient(-45deg,#ff4b6e,#ff6b9a,#ff89b5,#ffc1d6);
-background-size:400% 400%;
-animation:bg 12s ease infinite;
-color:white;
+    min-height:100vh;
+    overflow-x:hidden;
+    overflow-y:auto;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    padding:40px 20px;
+    background:linear-gradient(-45deg,#ff4b6e,#ff6b9a,#ff89b5,#ffc1d6);
+    background-size:400% 400%;
+    animation:bg 12s ease infinite;
+    color:white;
 }
 
 @keyframes bg{
@@ -34,15 +35,16 @@ color:white;
 }
 
 .card{
-width:90%;
-max-width:700px;
-padding:40px;
-border-radius:25px;
-background:rgba(255,255,255,.12);
-backdrop-filter:blur(15px);
-text-align:center;
-box-shadow:0 10px 40px rgba(0,0,0,.2);
-z-index:10;
+    width:90%;
+    max-width:700px;
+    margin:40px auto;
+    padding:40px;
+    border-radius:25px;
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(15px);
+    text-align:center;
+    box-shadow:0 10px 40px rgba(0,0,0,.2);
+    z-index:10;
 }
 
 h1{
@@ -87,11 +89,12 @@ to{opacity:1;transform:translateY(0);}
 }
 
 .heart{
-position:absolute;
-bottom:-30px;
-font-size:25px;
-animation:float linear forwards;
-opacity:.8;
+    position:fixed;
+    bottom:-30px;
+    font-size:25px;
+    animation:float linear forwards;
+    opacity:.8;
+    pointer-events:none;
 }
 
 @keyframes float{
@@ -114,15 +117,50 @@ font-size:15px;
 opacity:.85;
 }
 
+@media (max-width:768px){
+
+body{
+    padding:20px 10px;
+}
+
+.card{
+    width:95%;
+    padding:25px;
+    margin:20px auto;
+}
+
+h1{
+    font-size:2.2em;
+}
+
+.typing{
+    font-size:1.05em;
+    min-height:60px;
+}
+
+button{
+    width:100%;
+    font-size:16px;
+}
+
+#letter{
+    font-size:1em;
+    line-height:1.7;
+}
+
+}
+
+  
 </style>
 
+  
 </head>
 
 <body>
 
 <div class="card">
 
-<h1>❤️ To My Love LAVEENA❤️</h1>
+<h1>❤️ LAVEENA ❤️</h1>
 
 <div class="typing"></div>
 
